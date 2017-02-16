@@ -4,8 +4,8 @@ FROM lepinkainen/ubuntu-python-base:latest
 RUN apt-get install -y tree
 RUN apt-get install -y vim
 
-# CD into it the shared directory
-WORKDIR /shared
+# CD into it the source directory
+WORKDIR /src
 
 # Shell configuration
 COPY config/.bashrc /root/
