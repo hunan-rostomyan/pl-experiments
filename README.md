@@ -1,9 +1,11 @@
-### Getting started
+## Getting started
 
-* ./build
-* ./enter
-* modify files in *src/* (either in the host or inside the container)
+* `docker build -t python-devbox .` (or `./build`)
+* `docker run -ti -v $(pwd)/src:/src python-devbox` (or `./enter`)
 
-This allows us to do all of the x86 compillation on Linux. The reason is that of consistency with Siek's examples.
+## Purpose
 
-It's a slightly-modified version of [Devbox](https://github.com/hunan-rostomyan/devbox).
+Allows us to do all of the x86 compillation on Linux.
+
+## Sources
+* [Devbox](https://github.com/hunan-rostomyan/devbox).
