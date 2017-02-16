@@ -15,5 +15,5 @@ R<sub>1</sub> ::= (<b>program</b> exp)
 
 ## Sources
 
-* Siek, J. (2017) *Essentials of Compilation: An Incremental Approach*, Course Notes.
 * Friedman, D., Wand, M. (2008) *Essentials of Programming Languages*, Third Edition, MIT.
+* Siek, J. (2017) *Essentials of Compilation: An Incremental Approach*, Course Notes.

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker run -ti -v $(pwd)/shared:/shared python-devbox
