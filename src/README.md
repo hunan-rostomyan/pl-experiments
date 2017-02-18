@@ -13,6 +13,16 @@ exp ::= int | var | (<b>read</b>) | (<b>-</b> exp) | (<b>+</b> exp exp) | (<b>le
 
 R<sub>1</sub> ::= (<b>program</b> exp)
 
+## Language C<sub>0</sub>
+
+arg ::= int | var
+
+exp ::= arg | (<b>read</b>) | (<b>-</b> arg) | (<b>+</b> arg arg)
+
+stmt ::= (<b>assign</b> var exp) | (<b>return</b> arg)
+
+C0 ::= (<b>program</b> (var*) stmt+)
+
 ## Sources
 
 * Friedman, D., Wand, M. (2008) *Essentials of Programming Languages*, Third Edition, MIT.
