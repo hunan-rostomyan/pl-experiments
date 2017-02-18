@@ -25,5 +25,6 @@ C0 ::= (<b>program</b> (var*) stmt+)
 
 ## Sources
 
-* Friedman, D., Wand, M. (2008) *Essentials of Programming Languages*, Third Edition, MIT.
-* Siek, J. (2017) *Essentials of Compilation: An Incremental Approach*, Course Notes.
+* Abelson, H., Sussman, G.J. (1996) *Structure and Interpretation of Computer Programs*, 2nd Edition, MIT.
+* Friedman, D., Wand, M. (2008) *Essentials of Programming Languages*, 3rd Edition, MIT.
+* Siek, J. (2017) *Essentials of Compilation: An Incremental Approach*, Lecture Notes.
