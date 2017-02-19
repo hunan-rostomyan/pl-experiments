@@ -20,6 +20,10 @@
             (cdr head)
             (lookup rest var)))))
 
+; Adds x to lst unless it's already in it.
+(define (add-unique x lst)
+  (if (memv x lst) lst (cons x lst)))
+
 
 ; An interpreter for R1
 ; ---------------------
@@ -109,7 +113,7 @@
                   [(fnd2 asg2 vlist2) (flatten-aux assignments varlist body #f)])
        (values fnd2
                (append asg1 (list `(assign ,x ,fnd1)) asg2)
-               (cons x (append vlist1 vlist2))))]))
+               (add-unique x (append vlist1 vlist2))))]))
 
 (define (flatten exp)
   (let-values ([(flattened assignments varlist) (flatten-aux '() '() (cadr exp) #f)])
