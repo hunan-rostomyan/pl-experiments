@@ -34,7 +34,7 @@ A pseudo-X86 language distinguishable from the target language by the presence o
 | --- | --- |
 | arg | (<b>int</b> int) \| (<b>reg</b> register) \| (<b>deref</b> register int) \| (<b>var</b> var) |
 | instr | (<b>addq</b> arg arg) \| (<b>subq</b> arg arg) \| (<b>negq</b> arg) \| (<b>movq</b> arg arg) \| (<b>callq</b> label) \|<br>  (<b>pushq</b> arg) \| (<b>popq</b> arg) \| (<b>retq</b>) |
-| x86<sub>0</sub> | (<b>program</b> (var<sup>*</sup>) instr<sup>+</sup>) |
+| x86<sup>*</sup> | (<b>program</b> (var<sup>*</sup>) instr<sup>+</sup>) |
 
 ## Language X86<sub>0</sub>
 
