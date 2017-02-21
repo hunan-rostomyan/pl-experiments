@@ -197,7 +197,7 @@
 ; x86* -> x86*
 (define (assign-homes-aux-instr instr deref)
   (match instr
-    [`(callq ,label) `(callq ,label)]
+    [`(callq ,label) (list `(callq ,label))]
     [`(,unop ,arg)
      (list `(,unop ,(if (eq? (car arg) 'var)
                         `(deref rbp ,(lookup deref (cadr arg)))
@@ -273,17 +273,17 @@
     [`(int ,int) (format "$~a" int)]
     [`(reg ,reg) (format "%~a" reg)]
     [`(deref ,reg ,int) (format "~a(%~a)" int reg)]
-    [else (error print-x86 "unrecognized argument ~a" arg)]))
+    [else (error 'print-x86 "unrecognized argument ~a" arg)]))
 
 (define (print-x86-aux-instr instr)
   (match instr
-    [`(call ,label)
-     (format "call ~s" label)]
+    [`(callq ,label)
+     (format "\tcallq ~s" label)]
     [`(,unop ,arg)
      (string-append (format "\t~a ~a" unop (print-arg arg)))]
     [`(,binop ,arg1 ,arg2)
      (string-append (format "\t~a ~a, ~a" binop (print-arg arg1) (print-arg arg2)))]
-    [else "hi"]))
+    [else (error 'print-x86 "unrecognized instruction ~a" instr)]))
 
 (define (print-x86-aux instr str)
   (if (empty? instr) str
