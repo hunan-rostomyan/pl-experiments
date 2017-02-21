@@ -144,6 +144,9 @@
 (define (select-int var val)
   (list `(movq (int ,val) (var ,var))))
 
+(define (select-var var val)
+  (list `(movq (var ,val) (var ,var))))
+
 (define (select-neg var arg)
   (let ([name (if (symbol? arg) 'var 'int)])
     (list
@@ -172,6 +175,8 @@
            (match val
              [(? integer?)
               (sel-instr-aux rest (append new (select-int var val)))]
+             [(? symbol?)
+              (sel-instr-aux rest (append new (select-var var val)))]
              [`(read)
               (sel-instr-aux rest (append new (select-read var)))]
              [`(- ,arg)
