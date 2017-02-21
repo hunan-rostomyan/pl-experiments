@@ -1,12 +1,11 @@
 .PHONY: figure2.4
 
 figure2.4:
-	@gcc -S print_int.c
-	@gcc figure2.4.s print_int.s
+	@gcc -S runtime.c
+	@gcc figure2.4.s runtime.s
 	@./a.out
 
 program:
-	@gcc -S print_int.c
-	@gcc -S read_int.c
-	@gcc program.s print_int.s read_int.s
+	@gcc -S runtime.c
+	@gcc program.s runtime.s
 	@./a.out
