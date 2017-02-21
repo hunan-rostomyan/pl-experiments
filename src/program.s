@@ -5,8 +5,10 @@ main:
 	movq %rsp, %rbp
 	subq $24, %rsp
 
-	movq $2, -8(%rbp)
-	movq $3, -16(%rbp)
+	callq read_int
+	movq %rax, -8(%rbp)
+	callq read_int
+	movq %rax, -16(%rbp)
 	movq -8(%rbp), %rax
 	movq %rax, -24(%rbp)
 	movq -16(%rbp), %rax

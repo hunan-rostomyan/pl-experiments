@@ -7,5 +7,6 @@ figure2.4:
 
 program:
 	@gcc -S print_int.c
-	@gcc program.s print_int.s
+	@gcc -S read_int.c
+	@gcc program.s print_int.s read_int.s
 	@./a.out
