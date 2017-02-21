@@ -201,8 +201,7 @@
                          arg1)
                     ,(if (eq? (car arg2) 'var)
                          `(deref rbp ,(lookup deref (cadr arg2)))
-                         arg2)))]
-    [else (list `(fuckoff))]))
+                         arg2)))]))
 
 (define (assign-homes-aux instr new deref)
   (if (empty? instr) new
@@ -213,4 +212,4 @@
   (match exp
     [`(program ,varlist ,instructions ... ,ret)
      (let ([deref (map-to-stack varlist)])
-       (assign-homes-aux instructions '() deref))]))
+       `(program ,(length deref) ,(assign-homes-aux instructions '() deref) ,ret))]))
