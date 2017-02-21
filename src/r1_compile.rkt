@@ -183,3 +183,5 @@
   (match exp
     [`(program ,varlist ,statements ... ,return)
      `(program ,@(sel-instr-aux statements '()) (movq (var ,(cadr return)) (reg rax)) (retq))]))
+     `(program ,varlist ,@(sel-instr-aux statements '()) (movq (var ,(cadr return)) (reg rax)) (retq))]))
+
