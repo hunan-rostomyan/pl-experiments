@@ -18,7 +18,7 @@
   (if (empty? env)
       (error 'interp-R1 "unbound identifier '~a'" var)
       (let ([head (car env)][rest (cdr env)])
-        (if (eq? (car head) var)
+        (if (equal? (symbol->string (car head)) (symbol->string var))
             (cdr head)
             (lookup rest var)))))
 
