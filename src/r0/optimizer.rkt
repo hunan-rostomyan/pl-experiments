@@ -1,4 +1,5 @@
-; Optimizing compiler for R0
+#lang racket
+
 (define (pe-neg r)
   (cond [(fixnum? r) (- 0 r)]
         [else (match r

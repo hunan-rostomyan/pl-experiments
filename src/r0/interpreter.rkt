@@ -1,4 +1,5 @@
-; Interpreter for R0
+#lang racket
+
 (define (interp-R0 e)
   (match e
     [(? fixnum?) e]
