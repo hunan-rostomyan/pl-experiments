@@ -49,7 +49,7 @@
 (define (print-x86 exp)
   (match exp
     [`(program ,framesize ,instructions ... ,ret)
-     (write-file "program.s" (string-append
+     (write-file "../../program.s" (string-append
                               (print-preamble framesize)
                               (format "~a\n\n" (print-x86-aux (car instructions) ""))
                               (print-postamble framesize)))]))
