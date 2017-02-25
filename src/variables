@@ -1,3 +1,0 @@
-export WORKON_HOME=~/envs
-mkdir -p $WORKON_HOME
-source /usr/local/bin/virtualenvwrapper.sh

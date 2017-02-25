@@ -1,3 +1,2 @@
 #!/bin/bash
-
-docker run -ti -v $(pwd)/src:/src python-devbox
+docker run -ti -v $(pwd)/src:/src linux-devbox
