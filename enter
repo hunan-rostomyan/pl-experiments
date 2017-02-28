@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run -ti -v $(pwd)/src:/src linux-devbox
+docker run -ti -v $(pwd)/src:/src --security-opt seccomp:unconfined linux-devbox
