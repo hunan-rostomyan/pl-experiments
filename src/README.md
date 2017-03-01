@@ -12,6 +12,8 @@ A language with integral primitives, arbitrarily-nested additions and subtractio
 
 ## Language R<sub>1</sub>
 
+An extension of R<sub>0</sub> with variables. This is the language we'll be compiling down to assembly.
+
 | Nonterminal | Expression |
 | --- | --- |
 | exp | int \| var \| (<b>read</b>) \| (<b>-</b> exp) \| (<b>+</b> exp exp) \| (<b>let</b> ([var exp]) exp) |
