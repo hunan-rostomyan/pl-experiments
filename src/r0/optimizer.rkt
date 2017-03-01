@@ -1,5 +1,7 @@
 #lang racket
 
+(provide optimize)
+
 (define (pe-neg r)
   (cond [(fixnum? r) (- 0 r)]
         [else (match r
@@ -29,3 +31,8 @@
      (pe-neg r1)]
     [`(+ ,(app pe-arith r1) ,(app pe-arith r2))
      (pe-add r1 r2)]))
+
+(define (optimize exp)
+  (match exp
+    [`(program ,e) (pe-arith e)]
+    [else (error 'optimize-R0 "unrecognized expression ~a" exp)]))

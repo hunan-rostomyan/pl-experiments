@@ -1,7 +1,6 @@
 #lang racket/base
 
 (require rackunit "interpreter.rkt")
-(require "interpreter.rkt")
 
 (check-equal? (interp `(program 5)) 5)
 
