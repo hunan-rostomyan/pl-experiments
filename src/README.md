@@ -3,6 +3,8 @@ Programming Language Experiments
 
 ## Language R<sub>0</sub>
 
+A language with integral primitives, arbitrarily-nested additions and subtractions, and a facility to grab integral input from the user.
+
 | Nonterminal | Expression |
 | --- | --- |
 | exp | int \| (<b>read</b>) \| (<b>-</b> exp) \| (<b>+</b> exp exp) |
@@ -51,4 +53,6 @@ The *abstract syntax* of the target language.
 
 * Abelson, H., Sussman, G.J. (1996) *Structure and Interpretation of Computer Programs*, 2nd Edition, MIT.
 * Friedman, D., Wand, M. (2008) *Essentials of Programming Languages*, 3rd Edition, MIT.
+* Ghuloum, A. (2006) *An Incremental Approach to Compiler Construction*, Technical Report, Chicago.
+* Ghuloum, A. (2006) *Compilers: Backend to Frontend and Back to Front Again*, Tutorial.
 * Siek, J. (2017) *Essentials of Compilation: An Incremental Approach*, Lecture Notes.
