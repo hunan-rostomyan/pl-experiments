@@ -2,6 +2,7 @@
 
 (require "../../util/env.rkt")
 
+(provide interp)
 
 (define (interp-R1 env e)
   (match e
@@ -20,5 +21,7 @@
     [`(program ,e) (interp-R1 env e)]
     [else (error 'interp-R1 "unrecognized expression ~a" e)]))
 
-(define (interp e)
-  (interp-R1 (new-env) e))
+(define (interp exp)
+  (match exp
+    [`(program ,e) (interp-R1 (new-env) e)]
+    [else (error 'interp-R1 "unrecognized expression ~a" exp)]))
