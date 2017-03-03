@@ -18,7 +18,6 @@
                    (interp-R1 env e1)
                    (interp-R1 env e2))]
     [(? symbol?) (lookup env e)]
-    [`(program ,e) (interp-R1 env e)]
     [else (error 'interp-R1 "unrecognized expression ~a" e)]))
 
 (define (interp exp)
