@@ -4,7 +4,6 @@
 
 (provide map-to-stack)
 
-
 ; Sorts list of symbols, assigning them to unique locations
 ; on the stack.
 (define (map-to-stack-aux varlist cur env)

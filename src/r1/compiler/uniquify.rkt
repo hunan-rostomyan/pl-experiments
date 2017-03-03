@@ -4,7 +4,6 @@
 
 (provide uniquify)
 
-
 ; Ensures all identifiers are unique to avoid shadowing.
 ; R1 -> R1
 (define (uniquify alist)

@@ -5,7 +5,6 @@
 
 (provide flatten)
 
-
 ; Takes a uniquified program in R1 and produces a flattened C0 program.
 ; R1 -> C0
 (define (flatten-aux assignments varlist exp let?)

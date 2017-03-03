@@ -5,7 +5,6 @@
 
 (provide assign-homes)
 
-
 ; Assign-homes takes a pseudo-x86 program with var arguments and places all of the variables
 ; on the stack. Its output is still in pseudo-x86.
 ; x86* -> x86*

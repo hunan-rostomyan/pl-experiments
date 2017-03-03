@@ -4,7 +4,6 @@
 
 (provide print-x86)
 
-
 ; Print-x86 converts the abstract x86 syntax into x86 assembly. The resultant
 ; program can be compiled with the runtime system to print the program value to
 ; stdout.

@@ -2,7 +2,6 @@
 
 (provide program3)
 
-
 ; Should output 42
 (define program1 `(program
                    (let ([x 32])

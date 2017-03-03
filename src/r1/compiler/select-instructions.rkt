@@ -2,7 +2,6 @@
 
 (provide select-instructions)
 
-
 ; Select-instructions takes a C0 program and emits a pseudo-X86* program. Its primary
 ; responsibility is the conversion of arithmetic operations, but it also translates
 ; (read)s and (return)s.

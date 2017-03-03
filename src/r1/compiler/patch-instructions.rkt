@@ -2,7 +2,6 @@
 
 (provide patch-instructions)
 
-
 ; Patch-instructions takes a pseudo-x86 program and transforms into an abstract x86
 ; program by making sure each instruction references at most a single memory location.
 ; x86* -> x86 (abstract)
