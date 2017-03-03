@@ -9,3 +9,10 @@ program:
 	@gcc -S runtime.c
 	@gcc program.s runtime.s
 	./a.out
+
+compile-x86:
+	racket compile_js.rkt
+	gcc -S runtime.c
+	gcc program.s runtime.s
+	./a.out
+

@@ -6,15 +6,22 @@
 
 ; Ensures all identifiers are unique to avoid shadowing.
 ; R1 -> R1
-(define (uniquify alist)
+(define (uniquify-aux env)
   (lambda (exp)
     (match exp
-      [(? symbol?) `,(lookup alist exp)]
       [(? integer?) exp]
+      [(? symbol?) `,(lookup env exp)]      
+      [`(read) exp]
       [`(let ([,x ,e]) ,body)
        (let ([new (gensym x)])
-       `(let ([,new ,e]) ,((uniquify (extend-env alist x new)) body)))]
-      [`(program ,exp)
-       `(program ,((uniquify alist) exp))]
-      [`(,op ,es ...)
-       `(,op ,@(map (uniquify alist) es))])))
+       `(let ([,new ,e]) ,((uniquify-aux (extend-env env x new)) body)))]
+      [`(- ,e) `(- ,((uniquify-aux env) e))]
+      [`(+ ,e1 ,e2) `(+
+                     ,((uniquify-aux env) e1)
+                     ,((uniquify-aux env) e2))]
+      [else (error 'uniquify "unrecognized expression ~a" exp)])))
+
+(define (uniquify exp)
+  (match exp
+    [`(program ,e) `(program ,((uniquify-aux (new-env)) e))]
+    [else (error 'uniquify "unrecognized expression ~a" exp)]))
