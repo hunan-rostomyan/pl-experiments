@@ -3,3 +3,4 @@
 *.out
 *.rkt#1#
 src/racket-dist
+*.swp

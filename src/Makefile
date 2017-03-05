@@ -16,3 +16,7 @@ compile-x86:
 	gcc program.s runtime.s
 	./a.out
 
+compile-js:
+	racket compile_js.rkt
+	js program.js
+
