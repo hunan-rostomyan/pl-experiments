@@ -11,7 +11,7 @@ program:
 	./a.out
 
 compile-x86:
-	racket compile_js.rkt
+	racket compile_x86.rkt
 	gcc -S runtime.c
 	gcc program.s runtime.s
 	./a.out
