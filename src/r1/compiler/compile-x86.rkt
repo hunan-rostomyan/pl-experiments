@@ -2,13 +2,13 @@
 
 (require 2htdp/batch-io)
 
-(require "assign-homes.rkt")
 (require "flatten.rkt")
-(require "patch-instructions.rkt")
-(require "print-x86.rkt")
-(require "select-instructions.rkt")
 (require "stack.rkt")
 (require "uniquify.rkt")
+(require "x86/assign-homes.rkt")
+(require "x86/patch-instructions.rkt")
+(require "x86/print.rkt")
+(require "x86/select-instructions.rkt")
 (require "../../util/env.rkt")
 (require "../../util/list.rkt")
 

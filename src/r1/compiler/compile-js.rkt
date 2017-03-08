@@ -1,9 +1,9 @@
 #lang racket
 
 (require "flatten.rkt")
-(require "print-js.rkt")
-(require "select-instructions-js.rkt")
 (require "uniquify.rkt")
+(require "js/print.rkt")
+(require "js/select-instructions.rkt")
 
 (provide compile-js)
 

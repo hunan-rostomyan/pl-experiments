@@ -1,7 +1,7 @@
 #lang racket
 
-(require "stack.rkt")
-(require "../../util/env.rkt")
+(require "../stack.rkt")
+(require "../../../util/env.rkt")
 
 (provide assign-homes)
 
