@@ -1,4 +1,4 @@
-The root of the experiments is `src/`. Here we use Docker to create a Linux development environment.
+The root of the experiments is [src/](src/). Here we use Docker to create a Linux development environment.
 
 ## Getting Started
 
