@@ -1,6 +1,7 @@
 #lang racket
 
 (require "../../util/env.rkt")
+(require "../../util/uniqsym.rkt")
 
 (provide uniquify)
 
@@ -10,10 +11,10 @@
   (lambda (exp)
     (match exp
       [(? integer?) exp]
-      [(? symbol?) `,(lookup env exp)]      
+      [(? symbol?) `,(lookup env exp)]
       [`(read) exp]
       [`(let ([,x ,e]) ,body)
-       (let ([new (gensym x)])
+       (let ([new (uniqsym x)])
        `(let ([,new ,e]) ,((uniquify-aux (extend-env env x new)) body)))]
       [`(- ,e) `(- ,((uniquify-aux env) e))]
       [`(+ ,e1 ,e2) `(+
