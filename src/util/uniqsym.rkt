@@ -3,9 +3,8 @@
 (provide ord)
 (provide uniqsym)
 
-; Generate a unique identifier given any identifier. This is useful for
-; mocking calls to gensym because the identifiers it generates can be
-; predicted in advance.
+; Generate a unique symbol given any symbol. Similar to `gensym`, but
+; predictable and of a specific form that makes it easier to read.
 (define ord 0)
 (define (uniqsym var)
   (begin
