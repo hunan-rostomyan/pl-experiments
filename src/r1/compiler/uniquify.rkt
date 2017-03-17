@@ -1,28 +1,28 @@
 #lang racket
 
 (require "../../util/env.rkt")
+(require "../../util/error.rkt")
 (require "../../util/uniqsym.rkt")
 
 (provide uniquify)
 
 ; Ensures all identifiers are unique to avoid shadowing.
 ; R1 -> R1
-(define (uniquify-aux env)
+(define (aux env)
   (lambda (exp)
-    (match exp
-      [(? integer?) exp]
-      [(? symbol?) `,(lookup env exp)]
-      [`(read) exp]
-      [`(let ([,x ,e]) ,body)
-       (let ([new (uniqsym x)])
-       `(let ([,new ,e]) ,((uniquify-aux (extend-env env x new)) body)))]
-      [`(- ,e) `(- ,((uniquify-aux env) e))]
-      [`(+ ,e1 ,e2) `(+
-                     ,((uniquify-aux env) e1)
-                     ,((uniquify-aux env) e2))]
-      [else (error 'uniquify "unrecognized expression ~a" exp)])))
+    (let ([rec (aux env)])
+      (match exp
+        [(? integer?) exp]
+        [(? symbol?) `,(lookup env exp)]
+        [`(read) exp]
+        [`(let ([,var ,val]) ,body)
+         (let ([fresh-var (uniqsym var)])
+           `(let ([,fresh-var ,val]) ,((aux (extend-env env var fresh-var)) body)))]
+        [`(- ,e) `(- ,(rec e))]
+        [`(+ ,e1 ,e2) `(+ ,(rec e1) ,(rec e2))]
+        [else (syntax-error 'uniquify exp)]))))
 
 (define (uniquify exp)
   (match exp
-    [`(program ,e) `(program ,((uniquify-aux (new-env)) e))]
-    [else (error 'uniquify "unrecognized expression ~a" exp)]))
+    [`(program ,e) `(program ,((aux (new-env)) e))]
+    [else (syntax-error 'uniquify exp)]))

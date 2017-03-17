@@ -1,1 +1,2 @@
 * why is the frame size required to be a multiple of 16? (Siek, Essentials, p. 20)
+* how to create a deterministic `read` for testing? (something like `uniqsym`)
