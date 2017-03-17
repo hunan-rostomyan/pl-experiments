@@ -19,7 +19,7 @@
 ; such value is found, an error is raised.
 (define (lookup env var)
   (if (empty? env)
-      (error 'interp-R1 "unbound identifier '~a'" var)
+      (error (format "Unbound identifier '~a'" var))
       (let ([head (car env)][rest (cdr env)])
         (if (equal? (symbol->string (car head)) (symbol->string var))
             (cdr head)
