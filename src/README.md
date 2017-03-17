@@ -54,7 +54,9 @@ The *abstract syntax* of the target language.
 ## Sources
 
 * Abelson, H., Sussman, G.J. (1996) *Structure and Interpretation of Computer Programs*, 2nd Edition, MIT.
+* Brown, A., Wilson, G. (2012) *The Architecture Of Open Source Applications*.
 * Friedman, D., Wand, M. (2008) *Essentials of Programming Languages*, 3rd Edition, MIT.
 * Ghuloum, A. (2006) *An Incremental Approach to Compiler Construction*, Technical Report, Chicago.
 * Ghuloum, A. (2006) *Compilers: Backend to Frontend and Back to Front Again*, Tutorial.
+* Lattner, C. (2012) "LLVM". In (Brown, Wilson 2012), Chapter 11.
 * Siek, J. (2017) *Essentials of Compilation: An Incremental Approach*, Lecture Notes.
