@@ -8,6 +8,6 @@
 (define ord 0)
 (define (uniqsym var)
   (begin
-    (let ([new (format "~a.~a" var ord)])
+    (let ([new (string->symbol (format "~a.~a" var ord))])
       (set! ord (+ ord 1))
       new)))
