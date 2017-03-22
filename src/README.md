@@ -19,17 +19,6 @@ An extension of R<sub>0</sub> with variables. This is the language we'll be comp
 | exp | int \| var \| (<b>read</b>) \| (<b>-</b> exp) \| (<b>+</b> exp exp) \| (<b>let</b> ([var exp]) exp) |
 | R<sub>1</sub> | (<b>program</b> exp)
 
-## Language C<sub>0</sub>
-
-An intermediary langauge distinguishable from R<sub>1</sub> by the absence of shadowed variables (due to `uniquify`) and of nested expressions (due to `flatten`).
-
-| Nonterminal | Expression |
-| --- | --- |
-| arg | int \| var |
-| exp | arg \| (<b>read</b>) \| (<b>-</b> arg) \| (<b>+</b> arg arg) |
-| stmt | (<b>assign</b> var exp) \| (<b>return</b> arg) |
-| C<sub>0</sub> | (<b>program</b> (var<sup>*</sup>) stmt<sup>+</sup>) |
-
 ## Language X86<sup>*</sup>
 
 A pseudo-X86 language distinguishable from the target language by the presence of AST nodes of form (<b>var</b> exp) and of a program form that still uses a list of variables.

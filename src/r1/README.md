@@ -11,6 +11,19 @@ An extension of R<sub>0</sub> with variables.
 
 ## Implementation
 
+### Intermediate languages
+
+#### Language C<sub>0</sub>
+
+An intermediary langauge distinguishable from R<sub>1</sub> by the absence of shadowed variables (due to `uniquify`) and of nested expressions (due to `flatten`).
+
+| Nonterminal | Expression |
+| --- | --- |
+| arg | int \| var |
+| exp | arg \| (<b>read</b>) \| (<b>-</b> arg) \| (<b>+</b> arg arg) |
+| stmt | (<b>assign</b> var exp) \| (<b>return</b> arg) |
+| C<sub>0</sub> | (<b>program</b> (var<sup>*</sup>) stmt<sup>+</sup>) |
+
 ### Passes
 
 #### Eliminate shadowed variables (`uniquify`)
