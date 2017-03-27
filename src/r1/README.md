@@ -26,7 +26,7 @@ An intermediary langauge distinguishable from R<sub>1</sub> by the absence of sh
 
 ### Passes
 
-#### Eliminate shadowed variables (`uniquify`)
+#### Eliminate shadowed variables
 
 The `uniquify` pass takes an R<sub>1</sub> program that contains shadowed variables and returns a semantically-equivalent program
 without shadowed variables. It does this by
@@ -50,7 +50,7 @@ without shadowed variables. It does this by
          (- x.1)))))
 ```
 
-#### Turn nested expressions into sequences of unnested expressions (`flatten`)
+#### Turn nested expressions into sequences of unnested expressions
 
 The `flatten` pass takes an R<sub>1</sub> program that contains nested expressions (e.g. `(+ 4 (- 2))`) and produces a C<sub>0</sub> program that contains no nested expressions.
 
