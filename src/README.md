@@ -19,26 +19,6 @@ An extension of R<sub>0</sub> with variables. This is the language we'll be comp
 | exp | int \| var \| (<b>read</b>) \| (<b>-</b> exp) \| (<b>+</b> exp exp) \| (<b>let</b> ([var exp]) exp) |
 | R<sub>1</sub> | (<b>program</b> exp)
 
-## Language X86<sup>*</sup>
-
-A pseudo-X86 language distinguishable from the target language by the presence of AST nodes of form (<b>var</b> exp) and of a program form that still uses a list of variables.
-
-| Nonterminal | Expression |
-| --- | --- |
-| arg | (<b>int</b> int) \| (<b>reg</b> register) \| (<b>deref</b> register int) \| (<b>var</b> var) |
-| instr | (<b>addq</b> arg arg) \| (<b>subq</b> arg arg) \| (<b>negq</b> arg) \| (<b>movq</b> arg arg) \| (<b>callq</b> label) \|<br>  (<b>pushq</b> arg) \| (<b>popq</b> arg) \| (<b>retq</b>) |
-| x86<sup>*</sup> | (<b>program</b> (var<sup>*</sup>) instr<sup>+</sup>) |
-
-## Language X86<sub>0</sub>
-
-The *abstract syntax* of the target language.
-
-| Nonterminal | Expression |
-| --- | --- |
-| arg | (<b>int</b> int) \| (<b>reg</b> register) \| (<b>deref</b> register int) |
-| instr | (<b>addq</b> arg arg) \| (<b>subq</b> arg arg) \| (<b>negq</b> arg) \| (<b>movq</b> arg arg) \| (<b>callq</b> label) \|<br>  (<b>pushq</b> arg) \| (<b>popq</b> arg) \| (<b>retq</b>) |
-| x86<sub>0</sub> | (<b>program</b> int instr<sup>+</sup>) |
-
 
 ## Sources
 
